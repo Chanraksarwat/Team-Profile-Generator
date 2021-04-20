@@ -1,7 +1,7 @@
 // Import require external files
 const inquirer = require('inquirer');
 const fs = require('fs');
-const css = require('./ux/style');
+const css = require("./templates/css");
 
 const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
@@ -14,18 +14,18 @@ let teamArr = [];
 // Prompt Team Name
 function TeamNamePromt() {
   inquirer.prompt([{
-      message: 'Let get your team a name.',
+      message: 'Let get your team a name:',
       name: 'teamName'
     }])
     .then(data => {
       const teamName = data.teamName;
       teamArr.push(teamName) // Stored user input into teamArr Array
-      Manager();
+      addManager();
     })
 };
 
 // Add Manager to the result page
-function Manager() {
+function addManager() {
   inquirer.prompt([{
         message: "What is your team manager's name?",
         name: "name"
@@ -130,7 +130,6 @@ function addIntern() {
 };
 
 function compileTeam() {
-  // console.log("//////////You've done it!!! Now give your team a raise.////////")
 
   const htmlArray = []
   const htmlBeginning = `
@@ -144,7 +143,7 @@ function compileTeam() {
   <title>${teamArr[0]}</title>
   <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
-   ${style}
+   ${css}
   </style>
 </head>
 
@@ -196,7 +195,7 @@ function compileTeam() {
   `
   htmlArray.push(htmlEnd);
 
-  fs.writeFile(`./generated-html/${teamArr[0]}.html`, htmlArray.join(""), function (err) {
+  fs.writeFile(`./resultPage/${teamArr[0]}.html`, htmlArray.join(""), function (err) {
 
   })
 }
