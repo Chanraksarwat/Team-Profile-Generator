@@ -2,49 +2,57 @@ const style = `
 html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
+    padding: 0;
+    margin: 0;
 }
 
 body {
+    font-family: 'Montserrat', sand serif;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.banner-bar {
-    background-color: rgba(53, 124, 109, 0.842);
-    width: 100%;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-}
-
 h1 {
-    font-family: Bebas Neue;
-    font-size: 8vw;
+    font-family: 'Montserrat', sands serif;
+    font-size: 5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 p {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
     position: relative;
     left: 12px;
 }
 
 h2 {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
     position: relative;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 400;
     font-size: 17px;
     left: 12px;
+}
+
+.banner-bar {
+    background-color: #B00020;
+    width: 100%;
+    height: 150px;
+    color: #ffffff;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .member-card {
     width: 250px;
     height: 34vh;
     margin-bottom: 5vh;
-    background-color: rgb(240, 238, 238);
-    box-shadow: 2px 5px 5px black;
-    border-top-left-radius: 10px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
 }
 
 .card-container {
@@ -57,16 +65,17 @@ h2 {
 }
 
 .card-top {
-    background-color: rgb(228, 174, 76);
-    border: 2px solid rgb(228, 174, 76);
+    background-color: #0336ff;
+    border: 2px solid #0336ff;
+    border-radius: 10px 10px 0 0;
     width: 246px;
-    border-top-left-radius: 10px;
 }
 
 .card-bottom {
     display: flex;
     flex-direction: column;
     align-content: center;
+    overflow:hidden;
 }
 `
 
