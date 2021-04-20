@@ -77,6 +77,32 @@ function addTeamMembers() {
     });
 }
 
+function addEngineer() {
+  inquirer.prompt([{
+        message: "What is this engineer's name?",
+        name: "name"
+      },
+      {
+        message: "What is this engineer's email address?",
+        name: "email"
+      },
+      {
+        message: "What is this engineer's Github profile?",
+        name: "github"
+      }
+    ])
+
+    .then(data => {
+      const name = data.name
+      const id = teamArr.length + 1
+      const email = data.email
+      const github = data.github
+      const teamMember = new Engineer(name, id, email, github)
+      teamArr.push(teamMember)
+      addTeamMembers()
+    });
+}
+
 
 
 
