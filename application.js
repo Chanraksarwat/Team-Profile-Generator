@@ -14,18 +14,18 @@ let teamArr = [];
 // Prompt Team Name
 function TeamNamePromt() {
   inquirer.prompt([{
-      message: 'Let get your team a name.',
+      message: 'Let get your team a name:',
       name: 'teamName'
     }])
     .then(data => {
       const teamName = data.teamName;
       teamArr.push(teamName) // Stored user input into teamArr Array
-      Manager();
+      addManager();
     })
 };
 
 // Add Manager to the result page
-function Manager() {
+function addManager() {
   inquirer.prompt([{
         message: "What is your team manager's name?",
         name: "name"
@@ -196,7 +196,7 @@ function compileTeam() {
   `
   htmlArray.push(htmlEnd);
 
-  fs.writeFile(`./generated-html/${teamArr[0]}.html`, htmlArray.join(""), function (err) {
+  fs.writeFile(`./resultPage-html/${teamArr[0]}.html`, htmlArray.join(""), function (err) {
 
   })
 }
