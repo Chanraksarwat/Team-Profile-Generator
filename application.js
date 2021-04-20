@@ -103,7 +103,32 @@ function addEngineer() {
     });
 }
 
+function addIntern() {
+  inquirer.prompt([{
+        message: "What is this intern's name?",
+        name: "name"
+      },
+      {
+        message: "What is this intern's email address?",
+        name: "email"
+      },
+      {
+        message: "What is this intern's school?",
+        name: "school"
+      }
+    ])
 
+    .then(function (data) {
+      const name = data.name
+      const id = teamArr.length + 1
+      const email = data.email
+      const school = data.school
+      const teamMember = new Intern(name, id, email, school)
+      teamArr.push(teamMember)
+      addTeamMembers()
+    });
+
+};
 
 
 
